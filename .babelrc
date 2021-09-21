@@ -5,7 +5,7 @@
       {
         "cwd": "babelrc",
         "root": ["."],
-        "extensions": [".js", ".ios.js", ".android.js"],
+        "extensions": [".jsx",".js", ".ios.js", ".android.js"],
         "alias": {
           "screens": "./src/screens"
         }

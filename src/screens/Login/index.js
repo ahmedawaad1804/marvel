@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View,
-  TextInput,
-  Pressable
+  View
 
 } from 'react-native';
 import styles from './style';
@@ -21,7 +19,7 @@ export default function Login() {
   let onChangePassword = (password) => {
     setPassword(password)
   }
-  let handleLogin=()=>{
+  let handleLogin = () => {
 
   }
   return (
@@ -30,8 +28,10 @@ export default function Login() {
       <Logo />
       <UsernameTextInput onChangeUsername={onChangeUsername} />
       <PasswordTextInput onChangePassword={onChangePassword} />
-      <LoginButton handleLogin={handleLogin}/>
-      <Footer />
+      <LoginButton handleLogin={handleLogin} />
+      <View style={styles.footerContainer}>
+        <Footer />
+      </View>
     </View>
   );
 

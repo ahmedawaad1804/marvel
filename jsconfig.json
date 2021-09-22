@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "screens": ["./src/screens"],
+        "palette": ["./src/utilities/palette"],
+        "scaling": ["./src/utilities/scaling"],
+        "svg": ["./src/assets/svg"],
+        "components": ["./src/components"]
+        
+      }
+    },
+    "exclude": ["node_modules"]
+}

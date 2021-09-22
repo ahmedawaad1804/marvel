@@ -7,7 +7,12 @@
         "root": ["."],
         "extensions": [".jsx",".js", ".ios.js", ".android.js"],
         "alias": {
-          "screens": "./src/screens"
+          "screens": "./src/screens",
+          "palette": "./src/utilities/palette",
+          "scaling": "./src/utilities/scaling",
+          "svg": "./src/assets/svg",
+          "components": "./src/components"
+
         }
       }
     ]

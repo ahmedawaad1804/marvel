@@ -1,3 +1,4 @@
+import palette from 'palette';
 import {
 
   StyleSheet
@@ -5,7 +6,7 @@ import {
 } from 'react-native';
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: palette.black,
     flex: 1,
   }
 })

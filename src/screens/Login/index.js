@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
-  Text,
- 
+  TextInput,
+  Pressable
+
 } from 'react-native';
-
 import styles from './style';
-const Login =()=> {
- 
- 
-    return (
-      <View style={styles.container}>
-       <Text>Login</Text>
-      </View>
-    );
-  
+import Login_Shape from './LoginShape/index';
+import Logo from './Logo/index';
+import UsernameTextInput from './UsernameTextInput/index';
+import PasswordTextInput from './PasswordTextInput';
+import LoginButton from './LoginButton';
+import Footer from 'components/Footer';
+export default function Login() {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  let onChangeUsername = (username) => {
+    setUsername(username)
+  }
+  let onChangePassword = (password) => {
+    setPassword(password)
+  }
+  let handleLogin=()=>{
+
+  }
+  return (
+    <View style={styles.container}>
+      <Login_Shape />
+      <Logo />
+      <UsernameTextInput onChangeUsername={onChangeUsername} />
+      <PasswordTextInput onChangePassword={onChangePassword} />
+      <LoginButton handleLogin={handleLogin}/>
+      <Footer />
+    </View>
+  );
+
 };
-// const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.HEIGHT
 
 
-export default Login

@@ -3,7 +3,7 @@ import {
 
 } from '../actions/loginAction'
 
-const INITIAL_STATE = false
+const INITIAL_STATE = {name:'awaad'}
 
 const loginReducer = (state = INITIAL_STATE, action) => {
 

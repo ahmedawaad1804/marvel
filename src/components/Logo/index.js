@@ -8,13 +8,13 @@ import * as scaling from 'scaling';
 import Logo_SVG from 'svg/logo.svg'
 import styles from './style';
 
-export default function Logo() {
+export default function Logo(props) {
 
 
   return (
    
-      <View style={styles.Logo_SVG} >
-        <Logo_SVG width={scaling.scale(100)} height={scaling.verticalScale(100)} />
+      <View style={props.position ? styles.Logo_SVG:null} >
+        <Logo_SVG width={scaling.scale(props.width)} height={scaling.verticalScale(props.height)} />
       </View>
      
     

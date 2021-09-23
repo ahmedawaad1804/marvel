@@ -1,26 +1,25 @@
-import * as React from 'react';
+import  React,{useEffect} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../screens/Login/index';
+import Login from 'screens/Login/index';
+import Home from 'screens/Home';
+import { connect } from 'react-redux'
+
 const Stack = createStackNavigator();
 
-const StackProvider = () => {
+const StackProvider = (props) => {
 
     return (
-        <Stack.Navigator screenOptions={{
-            headerShown: false,
-            // transitionSpec:
-        }}
-        >
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-            {true? (
+            {!props.loginReducer ? (
                 <>
-                    <Stack.Screen name="Home" component={Login} />
-                    <Stack.Screen name="ProductDetails" component={Login} />
+                    {/* <Stack.Screen name="Home" component={Login} /> */}
+                   
                     <Stack.Screen name="ProductDetails2" component={Login} />
                 </>
             )
                 : (
-                    null
+                    <Stack.Screen name="ProductDetails" component={Home} />
                 )}
 
 
@@ -28,6 +27,9 @@ const StackProvider = () => {
     )
 
 }
+const mapStateToProps = state => ({
+    loginReducer: state.loginReducer,
 
 
-export default StackProvider
+})
+export default connect(mapStateToProps)(StackProvider)

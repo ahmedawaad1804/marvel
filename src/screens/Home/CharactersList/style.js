@@ -9,7 +9,7 @@ import {
 const styles = StyleSheet.create({
     flatListContainer: {
         width: scaling.width,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     cardConatiner: {
         width: scaling.width * 48 / 100,
@@ -25,7 +25,10 @@ const styles = StyleSheet.create({
     characterImage: {
         height: '100%',
         resizeMode: 'contain',
-        width:'100%'
+        width: '100%'
+    },
+    contentContainerStyle: {
+        paddingBottom: 100
     }
 
 

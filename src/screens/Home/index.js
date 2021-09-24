@@ -1,41 +1,29 @@
-import React, { useState ,useEffect} from 'react';
+import React from 'react';
 import {
-  View,Text, FlatList
+  View
 } from 'react-native';
 import styles from './style';
 import { connect } from 'react-redux'
 import HomeHeader from './HomeHeader';
-import dataService from '../../services/marvelServices/dataService';
 import CharactersList from './CharactersList';
-import imageService from 'src/services/marvelServices/imageService';
-
-
 
 function Home(props) {
-  const [data,setData]=useState([])
-  useEffect(()=>{
-   dataService.getCharacters()
-   .then(res=>{
-     console.log(res.data.data.results);
-     setData(res.data.data.results)
-   })
-   .catch(err=>{
-     console.log('err',err);
-   })
-  },[])
-  
+  const navigateToCharacterDetails = (pressProps) => {
+    props.navigation.navigate('CharacterDetails', pressProps)
+  }
+
   return (
     <View style={styles.container}>
-      <HomeHeader name={props.loginReducer.name}/>
-      <CharactersList data={data} />
-      
+      <HomeHeader name={props.loginReducer.name} />
+      <CharactersList navigateToCharacterDetails={navigateToCharacterDetails} />
+
     </View>
   );
 
 };
 const mapStateToProps = state => ({
-    loginReducer: state.loginReducer,
+  loginReducer: state.loginReducer,
 })
 export default connect(mapStateToProps)(Home)
-  
+
 

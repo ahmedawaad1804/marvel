@@ -4,19 +4,22 @@ import {
 
 } from 'react-native';
 import * as scaling from 'scaling';
-import Logo_SVG from 'svg/logo.svg'
+import Facebook_SVG from 'svg/facebook.svg'
+import Twitter_SVG from 'svg/twitter.svg'
+import Instagram_SVG from 'svg/instagram.svg'
 import styles from './style';
 
 export default function Footer() {
 
 
     return (
-      
-            <View style={styles.footerContainer} >
-                <Logo_SVG width={scaling.scale(100)} height={scaling.verticalScale(100)} />
-                <Logo_SVG width={scaling.scale(100)} height={scaling.verticalScale(100)} />
-            </View>
-          
+
+        <View style={styles.footerContainer} >
+            <Facebook_SVG width={scaling.scale(30)} height={scaling.verticalScale(30)} />
+            <Twitter_SVG width={scaling.scale(30)} height={scaling.verticalScale(30)} />
+            <Instagram_SVG width={scaling.scale(30)} height={scaling.verticalScale(30)} />
+        </View>
+
 
     );
 

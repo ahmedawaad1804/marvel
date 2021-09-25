@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     contentContainerStyle: {
         paddingBottom:scaling.verticalScale(100)
     }
+    
 
 
 })

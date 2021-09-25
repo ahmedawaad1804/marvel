@@ -4,13 +4,15 @@ import * as scaling from 'scaling';
 import { I18nManager } from 'react-native'
 
 const styles = StyleSheet.create({
-  passwordTextInput: {
+  warningText: {
+    color: palette.red,
+    fontWeight:'bold'
+    // textAlign: I18nManager.isRTL ? "right" : 'left' // secureTextEntry issue
+  },
+  warningTextContainer:{
     marginStart: scaling.scale(30),
-    borderBottomWidth: scaling.scale(3),
-    borderColor: palette.white,
-    width: scaling.width / 2,
-    color:palette.white,
-    textAlign: I18nManager.isRTL? "right":'left' // secureTextEntry issue
+    alignItems:'flex-start'
+
   }
 })
 

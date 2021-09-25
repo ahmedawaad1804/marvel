@@ -4,6 +4,7 @@ import Login from 'screens/Login/index';
 import Home from 'screens/Home';
 import { connect } from 'react-redux'
 import CharacterDetails from 'src/screens/CharacterDetails';
+import SearchCharacter from 'src/screens/SearchCharacter';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const StackProvider = (props) => {
                     <>
                         <Stack.Screen name="Home" component={Home} />
                         <Stack.Screen name="CharacterDetails" component={CharacterDetails} />
+                        <Stack.Screen name="SearchCharacter" component={SearchCharacter} />
                     </>
                 )}
 

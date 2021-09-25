@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
        alignItems:'center',
        justifyContent:'center',
        flexDirection:'row',
+       paddingBottom:scaling.verticalScale(10)
 
     }
 })

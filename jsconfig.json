@@ -8,7 +8,8 @@
         "svg": ["./src/assets/svg"],
         "components": ["./src/components"],
         "store": ["./src/store"],
-        "services": ["./src/services"]
+        "services": ["./src/services"],
+        "language": ["./src/language"]
         
       }
     },

@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Pressable,
   Text,
   TouchableOpacity
 
 } from 'react-native';
 import styles from './style';
+import I18n from 'language/I18n'
 
 export default function LoginButton(props) {
 const handleLogin=()=>{
@@ -15,7 +15,7 @@ const handleLogin=()=>{
   return (
 
     <TouchableOpacity  style={styles.button} onPress={handleLogin} >
-      <Text style={styles.logInText}>Log In</Text>
+      <Text style={styles.logInText}>{I18n.t('login.button')}</Text>
     </TouchableOpacity>
   );
 

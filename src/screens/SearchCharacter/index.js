@@ -4,26 +4,24 @@ import {
 } from 'react-native';
 import styles from './style';
 import { connect } from 'react-redux'
-import HomeHeader from './HomeHeader';
-import CharactersList from './CharactersList';
+import CharactersListSearch from './CharactersListSearch';
 
-function Home(props) {
+function SearchCharacter(props) {
   const navigateToCharacterDetails = (pressProps) => {
     props.navigation.navigate('CharacterDetails', pressProps)
   }
 
   return (
     <View style={styles.container}>
-      <HomeHeader name={props.loginReducer.name} />
-      <CharactersList navigateToCharacterDetails={navigateToCharacterDetails} />
+      <CharactersListSearch navigateToCharacterDetails={navigateToCharacterDetails} />
 
     </View>
   );
 
 };
+
 const mapStateToProps = state => ({
-  loginReducer: state.loginReducer,
+  characterReducer: state.characterReducer
 })
-export default connect(mapStateToProps)(Home)
 
-
+export default connect(mapStateToProps)(SearchCharacter)

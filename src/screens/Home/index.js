@@ -11,10 +11,12 @@ function Home(props) {
   const navigateToCharacterDetails = (pressProps) => {
     props.navigation.navigate('CharacterDetails', pressProps)
   }
-
+  const navigateToCharacterSearch = () => {
+    props.navigation.navigate('SearchCharacter')
+  }
   return (
     <View style={styles.container}>
-      <HomeHeader name={props.loginReducer.name} />
+      <HomeHeader name={props.loginReducer.name} navigateToCharacterSearch={navigateToCharacterSearch}/>
       <CharactersList navigateToCharacterDetails={navigateToCharacterDetails} />
 
     </View>

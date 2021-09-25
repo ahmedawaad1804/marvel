@@ -17,9 +17,9 @@ function ImageCard(props) {
                 updateImage(res.config.url)
             })
     }, [])
-    useEffect(() => {
-        console.log(props.index);
-    })
+    // useEffect(() => {
+    //     console.log(props.index);
+    // })
     const pressCard = () => {
         // console.log(props);
         props.navigateToCharacterDetails({image:image,props:props.item})

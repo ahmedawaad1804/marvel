@@ -7,9 +7,10 @@ import {
     View
 
 } from 'react-native';
-import Logo from 'src/components/Logo';
 import SearchLogo from 'src/components/SearchLogo';
 import styles from './style';
+import I18n from 'language/I18n'
+
 
 export default function SearchHeader(props) {
 
@@ -23,7 +24,7 @@ export default function SearchHeader(props) {
                         <TextInput
                             autoFocus
                             style={styles.searchTextInput}
-                            placeholder="Search your hero ..."
+                            placeholder={I18n.t('search.searchHero')}
                             onChangeText={props.onsearchTextChange}
 
                         />

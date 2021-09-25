@@ -5,5 +5,6 @@ export default {
     success:  '#3adb76',
     yellow:'#ffcc33',
     placeholdeGrey:'#ccc',
-    searchGrey:'#313131'
+    searchGrey:'#313131',
+    red:'#EE4B2B'
 }

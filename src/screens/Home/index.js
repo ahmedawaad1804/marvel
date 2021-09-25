@@ -16,7 +16,7 @@ function Home(props) {
   }
   return (
     <View style={styles.container}>
-      <HomeHeader name={props.loginReducer.name} navigateToCharacterSearch={navigateToCharacterSearch}/>
+      <HomeHeader name={props.loginReducer?.name} navigateToCharacterSearch={navigateToCharacterSearch}/>
       <CharactersList navigateToCharacterDetails={navigateToCharacterDetails} />
 
     </View>

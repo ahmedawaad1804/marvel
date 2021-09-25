@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
         paddingStart:scaling.scale(10)
     },
     searchLogoContainer:{
-        flex:2,
+        // flex:2,
         justifyContent:'center',
         alignItems:'flex-end',
-        paddingEnd:scaling.scale(10)
+        paddingEnd:scaling.scale(10),
+        marginHorizontal:scaling.scale(10),
     },
     searchTextInput:{
-        
     }
 
 

@@ -3,15 +3,32 @@ import {
     Pressable,
     Text,
     TouchableOpacity,
-    View
+    View,
+    Alert
 
 } from 'react-native';
 import Logo from 'src/components/Logo';
 import SearchLogo from 'src/components/SearchLogo';
 import styles from './style';
+import I18n from 'language/I18n'
+import { setLogin } from 'src/store/actions/loginAction';
+import { connect } from 'react-redux'
 
-export default function HomeHeader(props) {
 
+ function HomeHeader(props) {
+    const createTwoButtonAlert = () =>
+    Alert.alert(
+        I18n.t('logout.header'),
+        I18n.t('logout.content'),
+      [
+        {
+          text: I18n.t('no'),
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: I18n.t('yes'), onPress: () => {props.setLogin(null)}}
+      ]
+    );
     return (
 
         <View style={styles.headerContainer} >
@@ -21,20 +38,23 @@ export default function HomeHeader(props) {
             <TouchableOpacity style={styles.searchContainer} onPress={props.navigateToCharacterSearch}>
                 <View style={styles.searchBar}>
                     <View style={styles.searchTextContainer}>
-                        <Text style={styles.searchText}>Search your hero ...</Text>
+                        <Text style={styles.searchText}>{I18n.t('search.searchHero')}</Text>
                     </View>
                     <View style={styles.searchLogoContainer}>
                         <SearchLogo height={40} width={40}/>
                     </View>
                 </View>
             </TouchableOpacity>
-            <View style={styles.nameContainer}>
-                <Text style={styles.nameText}>{'Hi,\n'}{props.name}</Text>
-            </View>
+            <Pressable style={styles.nameContainer} onPress={createTwoButtonAlert}>
+                <Text style={styles.nameText}>{`${I18n.t('welcome')}\n`}{props.name}</Text>
+            </Pressable>
 
         </View>
     );
 
 };
 
-
+const mapDispatchToProps = {
+    setLogin
+  };
+  export default connect(null, mapDispatchToProps)(HomeHeader)

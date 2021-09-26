@@ -1,24 +1,32 @@
 import React, { useRef, useEffect } from 'react';
 import {
-    Pressable,
-    Text,
     TextInput,
-    TouchableOpacity,
-    View
+    View, Animated
 
 } from 'react-native';
 import SearchLogo from 'src/components/SearchLogo';
 import styles from './style';
 import I18n from 'language/I18n'
+import * as scaling from 'scaling';
 
 
 export default function SearchHeader(props) {
-
+    const increaseWidthAnim = useRef(new Animated.Value(scaling.width*20/100)).current
+    React.useEffect(() => {
+        Animated.timing(
+            increaseWidthAnim,
+            {
+                toValue: scaling.width*100/100,
+                duration: 1000,
+                useNativeDriver:false
+            }
+        ).start();
+    }, [increaseWidthAnim])
     return (
 
         <View style={styles.headerContainer} >
 
-            <View style={styles.searchContainer}>
+            <Animated.View style={[styles.searchContainer, { width: increaseWidthAnim }]} >
                 <View style={styles.searchBar}>
                     <View style={styles.searchTextContainer}>
                         <TextInput
@@ -33,7 +41,7 @@ export default function SearchHeader(props) {
                         <SearchLogo height={40} width={40} />
                     </View>
                 </View>
-            </View>
+            </Animated.View>
 
 
         </View>

@@ -36,7 +36,7 @@ function CharactersListSearch(props) {
             setSearchData(props.characterReducer)
         }
         setRefreshControl(false)
-    }, 1400)
+    }, 2000)
     return (
 
         <View style={styles.flatListContainer}>

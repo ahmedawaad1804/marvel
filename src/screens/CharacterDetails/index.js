@@ -1,19 +1,21 @@
-import { useNavigation } from '@react-navigation/core';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
-  View, Text, FlatList, Image, ScrollView, Pressable, BackHandler, Alert
+  View, Text, Animated, Image, ScrollView, Pressable
 } from 'react-native';
-import BackButton from 'src/components/BackButton';
+import AnimatedHeader from 'src/components/AnimatedHeader';
 import styles from './style';
 
 
 
+
+
 function CharacterDetails(props) {
+  const offset = useRef(new Animated.Value(0)).current;
+ 
   const [overlayImage, showOverlayImage] = useState(false)
   const characterDetails = props.route.params.props
   const characterImage = props.route.params.image
   const arrayOfCategories = ['comics', 'series', 'stories', 'events']
-  const { goBack } = useNavigation()
   useEffect(() => {
     console.log(props.route.params);
   })
@@ -26,14 +28,15 @@ function CharacterDetails(props) {
         <Image style={styles.overlayImage} source={{ uri: characterImage }} />
 
       </Pressable>}
-      <View style={styles.headerContainer}>
-        <Pressable style={styles.backButtonContainer} onPress={goBack}>
-          <BackButton />
-        </Pressable>
-        <Text style={styles.headerCharacterName}>{characterDetails.name}</Text>
-      </View>
-      <ScrollView>
-        <Image style={styles.headerImage} source={{ uri: characterImage }} />
+     <AnimatedHeader offset={offset} name={characterDetails.name} image={characterImage}/>
+      <ScrollView
+        scrollEventThrottle={200}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: offset } } }],
+          { useNativeDriver: false }
+        )}
+      >
+        <Image style={styles.contentImage} source={{ uri: characterImage }} />
 
         {arrayOfCategories.map(categoryName => (
           characterDetails[categoryName].available ? <View style={styles.paragraph} >

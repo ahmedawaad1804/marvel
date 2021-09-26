@@ -30,8 +30,11 @@ function Login(props) {
     else {
       setwarning(true)
       setTimeout(() => {
+
+        console.log('dssd');
         setwarning(false)
-      }, 2000);
+
+      }, 3000);
     }
   }
   return (

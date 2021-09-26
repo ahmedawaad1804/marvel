@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     searchContainer: {
-        flex: 4,
         justifyContent:'center',
         alignItems:'center',
     },

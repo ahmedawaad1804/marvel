@@ -44,6 +44,25 @@ const styles = StyleSheet.create({
   paragraphText:{
     fontSize:scaling.scale(16),
     fontWeight:'bold'
+  },
+  headerContainer:{
+    width:scaling.width,
+    height:scaling.verticalScale(70),
+    backgroundColor:palette.black,
+    justifyContent:'center',
+    flexDirection:'row',
+    alignItems:'center'
+
+  },
+  headerCharacterName:{
+    fontSize:scaling.scale(25),
+      fontWeight:'bold',
+      color:palette.white,
+      textAlign:'center',
+      flex:1
+  },
+  backButtonContainer:{
+    marginStart:scaling.scale(20)
   }
  
 })

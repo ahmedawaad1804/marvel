@@ -8,12 +8,10 @@ import BackButton from 'src/components/BackButton';
 import styles from './style';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as scaling from 'scaling';
-import { useNavigation } from '@react-navigation/core';
 
 
 export default function AnimatedHeader({ offset, name, image }) {
     const HEADER_HEIGHT = 150;
-    const { goBack } = useNavigation()
 
     const insets = useSafeAreaInsets();
 
@@ -31,9 +29,7 @@ export default function AnimatedHeader({ offset, name, image }) {
 
     return (
         <Animated.View style={[styles.headerContainer, { height: headerHeight }]}>
-            <Pressable style={styles.backButtonContainer} onPress={goBack}>
-                <BackButton />
-            </Pressable>
+            <BackButton containerStyle={styles.backButtonContainer}/>
             <Text style={styles.headerCharacterName}>{name}</Text>
             <Animated.View style={[{
                 marginEnd: scaling.scale(20)

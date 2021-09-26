@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
        justifyContent:'center',
        flexDirection:'row',
        paddingBottom:scaling.verticalScale(10)
-
     }
 })
 

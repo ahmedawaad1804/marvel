@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from 'screens/Login/index';
+import Login from 'screens/Login';
 import Home from 'screens/Home';
 import { connect } from 'react-redux'
-import CharacterDetails from 'src/screens/CharacterDetails';
-import SearchCharacter from 'src/screens/SearchCharacter';
+import CharacterDetails from 'screens/CharacterDetails';
+import SearchCharacter from 'screens/SearchCharacter';
 
 const Stack = createStackNavigator();
 
@@ -33,7 +33,5 @@ const StackProvider = (props) => {
 }
 const mapStateToProps = state => ({
     loginReducer: state.loginReducer,
-
-
 })
 export default connect(mapStateToProps)(StackProvider)

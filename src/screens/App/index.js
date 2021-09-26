@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,SafeAreaView,StatusBar
+  SafeAreaView,StatusBar
 
 } from 'react-native';
 import palette from 'palette';

@@ -1,11 +1,7 @@
 import palette from 'palette';
 import * as scaling from 'scaling';
 
-import {
-
-  StyleSheet
-
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: palette.white,
@@ -13,19 +9,18 @@ const styles = StyleSheet.create({
   },
   contentImage: {
     width: scaling.width,
-    height: scaling.height * .4,
-    resizeMode: 'cover'
+    height: scaling.height * 0.4,
+    resizeMode: 'cover',
   },
   overlayImage: {
-    width: scaling.width * .8,
+    width: scaling.width * 0.8,
     alignSelf: 'center',
-    height: scaling.height * .4,
+    height: scaling.height * 0.4,
     resizeMode: 'stretch',
     position: 'absolute',
     top: scaling.verticalScale(100),
     zIndex: 1,
-    backgroundColor: 'white'
-
+    backgroundColor: 'white',
   },
   overlayImageContainer: {
     position: 'absolute',
@@ -35,18 +30,16 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   paragraph: {
-    padding: scaling.scale(15)
+    padding: scaling.scale(15),
   },
   headerText: {
     fontSize: scaling.scale(25),
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   paragraphText: {
     fontSize: scaling.scale(16),
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
- 
+});
 
-})
-
-export default styles
+export default styles;

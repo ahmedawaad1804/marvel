@@ -1,8 +1,8 @@
 import palette from 'palette';
 import React from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import {ActivityIndicator, StyleSheet} from 'react-native';
 
-const Loading = ({ style, color}) => {
+const Loading = ({style, color}) => {
   return (
     <ActivityIndicator
       style={[styles.containerStyle, style]}
@@ -12,7 +12,7 @@ const Loading = ({ style, color}) => {
 };
 
 const styles = StyleSheet.create({
-  containerStyle: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  containerStyle: {flex: 1, justifyContent: 'center', alignItems: 'center'},
 });
 
 export default Loading;

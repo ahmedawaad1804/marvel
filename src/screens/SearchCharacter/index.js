@@ -1,27 +1,25 @@
 import React from 'react';
-import {
-  View
-} from 'react-native';
+import {View} from 'react-native';
 import styles from './style';
-import { connect } from 'react-redux'
+import {connect} from 'react-redux';
 import CharactersListSearch from './CharactersListSearch';
 
 function SearchCharacter(props) {
-  const navigateToCharacterDetails = (pressProps) => {
-    props.navigation.navigate('CharacterDetails', pressProps)
-  }
+  const navigateToCharacterDetails = pressProps => {
+    props.navigation.navigate('CharacterDetails', pressProps);
+  };
 
   return (
     <View style={styles.container}>
-      <CharactersListSearch navigateToCharacterDetails={navigateToCharacterDetails} />
-
+      <CharactersListSearch
+        navigateToCharacterDetails={navigateToCharacterDetails}
+      />
     </View>
   );
-
-};
+}
 
 const mapStateToProps = state => ({
-  characterReducer: state.characterReducer
-})
+  characterReducer: state.characterReducer,
+});
 
-export default connect(mapStateToProps)(SearchCharacter)
+export default connect(mapStateToProps)(SearchCharacter);

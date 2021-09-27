@@ -29,7 +29,7 @@ function CharacterDetails(props) {
         image={characterImage}
       />
       <ScrollView
-        scrollEventThrottle={200}
+        scrollEventThrottle={20}
         onScroll={Animated.event(
           [{nativeEvent: {contentOffset: {y: offset}}}],
           {useNativeDriver: false},

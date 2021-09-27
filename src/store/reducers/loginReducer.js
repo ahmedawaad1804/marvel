@@ -1,19 +1,15 @@
-import {
-    IS_LOGIN
+import {IS_LOGIN} from '../actions/loginAction';
 
-} from '../actions/loginAction'
-
-const INITIAL_STATE = null
+const INITIAL_STATE = null;
 
 const loginReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case IS_LOGIN:
+      state = action.payload;
+      return state;
+    default:
+      return state;
+  }
+};
 
-    switch (action.type) {
-        case IS_LOGIN:
-            state = action.payload
-            return state
-        default:
-            return state
-    }
-}
-
-export default loginReducer
+export default loginReducer;

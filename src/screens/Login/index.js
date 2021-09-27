@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View } from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 import styles from './style';
 import Login_Shape from 'components/LoginShape/index';
 import Logo from 'components/Logo/index';
@@ -7,36 +7,33 @@ import UsernameTextInput from './UsernameTextInput/index';
 import PasswordTextInput from './PasswordTextInput';
 import LoginButton from './LoginButton';
 import Footer from 'components/Footer';
-import { connect } from 'react-redux'
-import { setLogin } from 'store/actions/loginAction'
+import {connect} from 'react-redux';
+import {setLogin} from 'store/actions/loginAction';
 import LanguageButton from 'src/components/LanguageButton';
 import WarningText from 'src/components/WarningText';
-import I18n from 'language/I18n'
+import I18n from 'language/I18n';
 
 function Login(props) {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [warning, setwarning] = useState(false)
-  const onChangeUsername = (username) => {
-    setUsername(username)
-  }
-  const onChangePassword = (password) => {
-    setPassword(password)
-  }
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [warning, setwarning] = useState(false);
+  const onChangeUsername = _username => {
+    setUsername(_username);
+  };
+  const onChangePassword = _password => {
+    setPassword(_password);
+  };
   const handleLogin = () => {
-    if (username != '') {
-      props.setLogin({ name: username })
-    }
-    else {
-      setwarning(true)
+    if (username) {
+      props.setLogin({name: username});
+    } else {
+      setwarning(true);
       setTimeout(() => {
-
         console.log('dssd');
-        setwarning(false)
-
+        setwarning(false);
       }, 3000);
     }
-  }
+  };
   return (
     <View style={styles.container}>
       <Login_Shape />
@@ -52,8 +49,8 @@ function Login(props) {
       </View>
     </View>
   );
-};
+}
 const mapDispatchToProps = {
-  setLogin
+  setLogin,
 };
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login);

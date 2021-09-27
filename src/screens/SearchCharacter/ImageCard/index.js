@@ -8,11 +8,18 @@ import styles from './style';
 function ImageCard(props) {
   const [image, updateImage] = useState('');
   useEffect(() => {
+    let cancel = false;
     imageService
       .getCharacterPhoto(props.item.thumbnail.path, imageSize.standard_large)
       .then(res => {
+        if (cancel) {
+          return;
+        }
         updateImage(res.config.url);
       });
+    return () => {
+      cancel = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

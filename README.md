@@ -2,6 +2,7 @@
 <p> hi </p>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hslwihoj.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
+
 # SCREENS
 # 1-login screen
 -using text inputs with simple validation for username to proceed.
